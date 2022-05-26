@@ -1,6 +1,6 @@
 ﻿# Sobre o Microblog
 
-## Área Pública (localhost/microblog)
+## Área Pública (localhost/microblog-joao)
 ### Qualquer pessoa acessa:
 
 - index.php: página inicial
@@ -11,7 +11,7 @@
 
 ## Área Administrativa (localhost/microblog/admin): 
 ### Somente pessoas cadastradas como tipo *admin* acessam:
-
+-
 - admin/index.php: página inicial
 - admin/meu-perfil.php: visualizar/atualizar próprios dados
 - admin/posts.php: visualizar todos os posts de todos os usuários
