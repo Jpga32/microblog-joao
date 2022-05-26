@@ -19,7 +19,8 @@ function inserirUsuario(
 
 
 // Função codificaSenha: usada em usuario-insere.php e usuario-atualiza.php
-function codificaSenha(string $senha):string{
+function codificaSenha(string $senha): string
+{
     return password_hash($senha, PASSWORD_DEFAULT);
 }
 
@@ -29,19 +30,19 @@ function codificaSenha(string $senha):string{
 
 
 // Função lerUsuarios: usada em usuarios.php
-function lerUsuarios(mysqli $conexao):array{
-  $sql = "SELECT id,nome,email,tipo FROM usuarios ORDER BY nome";
+function lerUsuarios(mysqli $conexao): array
+{
+    $sql = "SELECT id,nome,email,tipo FROM usuarios ORDER BY nome";
 
-  $resultado = mysqli_query($conexao,$sql) or die (mysqli_error($conexao));
+    $resultado = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
 
-  $usuarios = [];
+    $usuarios = [];
 
-        while($usuario = mysqli_fetch_assoc($resultado)){
-            array_push($usuarios ,$usuario);
+    while ($usuario = mysqli_fetch_assoc($resultado)) {
+        array_push($usuarios, $usuario);
+    };
 
-        };
-
-  return $usuarios;
+    return $usuarios;
 }
 
 
@@ -50,13 +51,24 @@ function lerUsuarios(mysqli $conexao):array{
 
 
 // Função excluirUsuario: usada em usuario-exclui.php
-
+function excluirUsuario($conexao, $id)
+{;
+    $sql = "DELETE FROM  usuarios WHERE id =$id";
+    mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
+}
 // fim excluirUsuario
 
 
 
 // Função lerUmUsuario: usada em usuario-atualiza.php
+function lerUmUsuario(mysqli $conexao, int $id)
+{
+    $sql = "SELECT id , nome , email, tipo , senha  FROM usuarios WHERE id = $id";
 
+    $resultado = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
+
+    return mysqli_fetch_assoc($resultado);
+};
 // fim lerUmUsuario
 
 
@@ -68,6 +80,11 @@ function lerUsuarios(mysqli $conexao):array{
 
 
 // Função atualizarUsuario: usada em usuario-atualiza.php
+function atualizarUsuario(mysqli $conexao, int $id,string $nome,string $email,string $tipo, string $senha)
+{
+    $sql = "UPDATE  usuarios  SET nome = '$nome', email = '$email', tipo = '$tipo',senha = '$senha' WHERE id = $id";
+    mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
+}
 
 // fim atualizarUsuario
 
