@@ -13,13 +13,25 @@ if(isset($_POST['atualizar'])){
 
     $tipo =  filter_input(INPUT_POST, "tipo", FILTER_SANITIZE_SPECIAL_CHARS);
 
+/* Lógica para a senha
+  Se o campo da senha do formúlario estiver vazio,
+  então significa que o usuário NÃO A SENHA. */
+
+  if(empty($_POST['senha'])){
+    $senha = $usuario['senha']; // MANTER A SENHA JA EXISTENTE NO BANCO!
+  }else{
+
+/* Caso contrário, se o usúario digitou alguma coisa no campo
+  senha, precisaremos verificar a senha */
+
+$senha = verificaSenha($_POST['senha'], $usuario['senha']);
+ 
+}
   atualizarUsuario($conexao, $id, $nome, $email, $tipo, $senha);
 
   header("location:usuarios.php");
 
 };
-
-
 
 ?>
   
