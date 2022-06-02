@@ -32,7 +32,7 @@ de permissão de acesso dos usuários */
 
     }
 
-    function logout (){
+    function logout ( int $id){
         session_start();
         session_destroy();
         header("location:../login.php");

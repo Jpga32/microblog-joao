@@ -32,7 +32,7 @@ $pagina = basename($_SERVER['PHP_SELF']);
             <li class="nav-item"><a class="nav-link" href="posts.php">Posts</a></li>
             <li class="nav-item"><a class="nav-link" href="usuarios.php">Usuários</a></li>
             <li class="nav-item"><a class="nav-link" href="../index.php" target="_blank">Área pública</a></li>
-            <li class="nav-item"><a class="nav-link" href="">&times; Sair</a></li>
+            <li class="nav-item"><a class="nav-link"  href="">&times;  Sair</a></li>
           </ul>
         </div>
       </div>
