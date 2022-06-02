@@ -38,3 +38,13 @@ de permissão de acesso dos usuários */
         header("location:../login.php?logout");
         die ();
     }
+
+function verificaAcessoAdmin (){
+    /* Se o tipo de usuario logado NÃO for admin  */
+    if($_SESSION['tipo'] != 'admin'){
+        //REDIRECIONE para página não-autorizado
+        header("location:nao-autorizado.php");
+        die();
+
+    }
+}
