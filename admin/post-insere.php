@@ -12,15 +12,15 @@ if (isset($_POST['inserir'])) {
   /* OBETENDO DADOS DO ARQUIVO ENVIADO */
 
     $imagem = $_FILES['imagem'];
-}
+
   /* função de UPLOAD  (Responsavel por enviar o arquivo para o HD do servidor)*/
   upload($imagem);
 
   // Função inserirPost  (atenção: mandaremos apenas o name da imagem )
   inserirPost($conexao, $titulo, $texto, $resumo, $imagem['name'],$_SESSION['id']);
 
-header("location:posts.php");
-
+    header("location:posts.php");
+}
 ?>
 <div class="row">
   <article class="col-12 bg-white rounded shadow my-1 py-4">
