@@ -43,7 +43,7 @@ $quantidade = count($posts);
             <tr>
               <td> <?= $post['titulo'] ?></td>
 
-              <td> <?=  date_default_timezone_set('America/Sao_Paulo'); return  $post['data'] ?> </td>
+              <td> <?=$post['data'] ?> </td>
 
               <?php if ($tipoUsuarioLogado == 'admin') {  ?>
 
