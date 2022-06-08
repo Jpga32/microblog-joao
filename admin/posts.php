@@ -43,7 +43,9 @@ $quantidade = count($posts);
             <tr>
               <td> <?= $post['titulo'] ?></td>
 
-              <td> <?=$post['data'] ?> </td>
+              <td> <
+              
+             $post['data'] ?> </td>
 
               <?php if ($tipoUsuarioLogado == 'admin') {  ?>
 
