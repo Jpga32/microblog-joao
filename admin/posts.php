@@ -13,6 +13,7 @@ $quantidade = count($posts);
 
 ?>
 
+
 <div class="row">
   <article class="col-12 bg-white rounded shadow my-1 py-4">
     <h2 class="text-center">Posts <span class="badge badge-primary"><?= $quantidade ?></span></h2>
@@ -43,9 +44,7 @@ $quantidade = count($posts);
             <tr>
               <td> <?= $post['titulo'] ?></td>
 
-              <td> <
-              
-             $post['data'] ?> </td>
+              <td> <?=formataData($post['data']) ?> </td>
 
               <?php if ($tipoUsuarioLogado == 'admin') {  ?>
 
