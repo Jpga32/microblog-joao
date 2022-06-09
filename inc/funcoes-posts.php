@@ -131,7 +131,7 @@ function formataData(string $data): string
 /*** Funções para a área PÚBLICA do site ***/
 
 /* Usada em index.php */
-function lerTodosOsPosts(mysqli $conexao,): array
+function lerTodosOsPosts(mysqli $conexao): array
 {
     $sql = "SELECT  id, titulo, imagem , resumo FROM posts ORDER BY data DESC";
 
