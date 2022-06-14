@@ -1,7 +1,7 @@
-<!--   mysqli_query($conexao,$sql) or die (mysqli_error($conexao)); -->
 <?php
 require "conecta.php";
 
+// mysqli_query($conexao,$sql) or die (mysqli_error($conexao)); 
 // Função inserirUsuario: usada em usuario-insere.php
 function inserirUsuario(
     mysqli $conexao,

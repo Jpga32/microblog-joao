@@ -1,4 +1,5 @@
 <?php
+ob_start();
 require "funcoes-sessao.php";
  verificaAcesso(); 
 
